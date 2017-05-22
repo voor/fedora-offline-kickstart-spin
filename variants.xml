@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE variants PUBLIC "-//Red Hat, Inc.//DTD Variants info//EN" "variants2012.dtd">
+<variants>
+  <variant id="Gateway" name="Gateway" type="variant">
+    <arches>
+      <arch>x86_64</arch>
+    </arches>
+    <groups>
+      <group default="true">core</group>
+      <group default="true">networkmanager-submodules</group>
+      <group default="true">ansible-node</group>
+      <group default="true">gateway-software</group>
+      <!-- Things needed for installation -->
+      <group default="true">anaconda-tools</group>
+      <group default="true">base-x</group>
+      <group default="true">hardware-support</group>
+      <group default="true">workstation-product</group>
+      <group default="true">fonts</group>
+      <group default="true">gnome-desktop</group>
+    </groups>
+    <environments>
+      <environment display_order="10">workstation-product-environment</environment>
+    </environments>
+    <buildinstallpackages>
+      <package>fedora-productimg-workstation</package>
+    </buildinstallpackages>
+  </variant>
+</variants>

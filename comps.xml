@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE comps PUBLIC "-//Red Hat, Inc.//DTD Comps info//EN" "comps.dtd">
+<comps>
+  <group>
+    <id>gateway-software</id>
+    <_name>Additional Offline Packages</_name>
+    <_description>Packages necessary that appeared in the kickstart file.</_description>
+    <default>false</default>
+    <uservisible>true</uservisible>
+    <packagelist>
+      <packagereq type="mandatory">autossh</packagereq>
+      <packagereq type="mandatory">dnsmasq</packagereq>
+      <packagereq type="mandatory">mariadb-server</packagereq>
+      <packagereq type="mandatory">nginx</packagereq>
+      <packagereq type="mandatory">tar</packagereq>
+      <packagereq type="mandatory">libsemanage-python</packagereq>
+      <packagereq type="mandatory">mysql-connector-python</packagereq>
+      <packagereq type="mandatory">python</packagereq>
+      <packagereq type="mandatory">python-firewall</packagereq>
+      <packagereq type="mandatory">python2-dnf</packagereq>
+      <packagereq type="mandatory">python2-mysql</packagereq>
+    </packagelist>
+  </group>
+  <group>
+    <id>ansible-node</id>
+    <_name>Ansible node</_name>
+    <_description>This group contains packages necessary for the system to be controlled by Ansible.</_description>
+    <default>false</default>
+    <uservisible>true</uservisible>
+    <packagelist>
+      <packagereq type="mandatory">python2-dnf</packagereq>
+      <packagereq type="conditional" requires="selinux-policy">libselinux-python</packagereq>
+    </packagelist>
+  </group>
+  <group>
+    <id>core</id>
+    <_name>Core</_name>
+    <_description>Smallest possible installation</_description>
+    <default>false</default>
+    <uservisible>false</uservisible>
+    <packagelist>
+      <packagereq type="mandatory">audit</packagereq>
+      <packagereq type="mandatory">basesystem</packagereq>
+      <packagereq type="mandatory">bash</packagereq>
+      <packagereq type="mandatory">coreutils</packagereq>
+      <packagereq type="mandatory">cronie</packagereq>
+      <packagereq type="mandatory">curl</packagereq>
+      <packagereq type="mandatory">dhcp-client</packagereq>
+      <packagereq type="mandatory">dnf</packagereq>
+      <packagereq type="mandatory">dnf-yum</packagereq>
+      <packagereq type="mandatory">e2fsprogs</packagereq>
+      <packagereq type="mandatory">filesystem</packagereq>
+      <packagereq type="mandatory">glibc</packagereq>
+      <packagereq type="mandatory">grubby</packagereq>
+      <packagereq type="mandatory">hostname</packagereq>
+      <packagereq type="mandatory">initscripts</packagereq>
+      <packagereq type="mandatory">iproute</packagereq>
+      <packagereq type="mandatory">iputils</packagereq>
+      <packagereq type="mandatory">kbd</packagereq>
+      <packagereq type="mandatory">less</packagereq>
+      <packagereq type="mandatory">man-db</packagereq>
+      <packagereq type="mandatory">ncurses</packagereq>
+      <packagereq type="mandatory">openssh-clients</packagereq>
+      <packagereq type="mandatory">openssh-server</packagereq>
+      <packagereq type="mandatory">parted</packagereq>
+      <packagereq type="mandatory">passwd</packagereq>
+      <packagereq type="mandatory">plymouth</packagereq>
+      <packagereq type="mandatory">policycoreutils</packagereq>
+      <packagereq type="mandatory">procps-ng</packagereq>
+      <packagereq type="mandatory">rootfiles</packagereq>
+      <packagereq type="mandatory">rpm</packagereq>
+      <packagereq type="mandatory">selinux-policy-targeted</packagereq>
+      <packagereq type="mandatory">setup</packagereq>
+      <packagereq type="mandatory">shadow-utils</packagereq>
+      <packagereq type="mandatory">sudo</packagereq>
+      <packagereq type="mandatory">systemd</packagereq>
+      <packagereq type="mandatory">util-linux</packagereq>
+      <packagereq type="mandatory">vim-minimal</packagereq>
+      <packagereq type="default">authconfig</packagereq>
+      <packagereq type="default">dnf-plugins-core</packagereq>
+      <packagereq type="default">dracut-config-rescue</packagereq>
+      <packagereq type="default">firewalld</packagereq>
+      <packagereq type="default">NetworkManager</packagereq>
+      <packagereq type="default">ppc64-utils</packagereq>
+      <packagereq type="optional">dracut-config-generic</packagereq>
+      <packagereq type="optional">initial-setup</packagereq>
+      <packagereq type="optional">uboot-images-armv7</packagereq>
+      <packagereq type="optional">uboot-tools</packagereq>
+    </packagelist>
+  </group>
+  <group>
+    <id>guest-agents</id>
+    <_name>Guest Agents</_name>
+    <_description>Agents used when running under a hypervisor.</_description>
+    <default>false</default>
+    <uservisible>false</uservisible>
+    <packagelist>
+      <packagereq>open-vm-tools</packagereq>
+      <packagereq>qemu-guest-agent</packagereq>
+    </packagelist>
+  </group>
+  <group>
+    <id>hardware-support</id>
+    <_name>Hardware Support</_name>
+    <_description>This group is a collection of tools for various hardware specific utilities.</_description>
+    <default>false</default>
+    <uservisible>false</uservisible>
+    <packagelist>
+      <packagereq type="default">atmel-firmware</packagereq>
+      <packagereq type="default">b43-fwcutter</packagereq>
+      <packagereq type="default">b43-openfwwf</packagereq>
+      <packagereq type="default">ipw2100-firmware</packagereq>
+      <packagereq type="default">ipw2200-firmware</packagereq>
+      <packagereq type="default">iwl100-firmware</packagereq>
+      <packagereq type="default">iwl1000-firmware</packagereq>
+      <packagereq type="default">iwl105-firmware</packagereq>
+      <packagereq type="default">iwl135-firmware</packagereq>
+      <packagereq type="default">iwl2000-firmware</packagereq>
+      <packagereq type="default">iwl2030-firmware</packagereq>
+      <packagereq type="default">iwl3160-firmware</packagereq>
+      <packagereq type="default">iwl3945-firmware</packagereq>
+      <packagereq type="default">iwl4965-firmware</packagereq>
+      <packagereq type="default">iwl5000-firmware</packagereq>
+      <packagereq type="default">iwl5150-firmware</packagereq>
+      <packagereq type="default">iwl6000-firmware</packagereq>
+      <packagereq type="default">iwl6000g2a-firmware</packagereq>
+      <packagereq type="default">iwl6000g2b-firmware</packagereq>
+      <packagereq type="default">iwl6050-firmware</packagereq>
+      <packagereq type="default">iwl7260-firmware</packagereq>
+      <packagereq type="default">libertas-usb8388-firmware</packagereq>
+      <packagereq type="default">usb_modeswitch</packagereq>
+      <packagereq type="default">zd1211-firmware</packagereq>
+      <packagereq type="optional">acpi</packagereq>
+      <packagereq type="optional">acpitool</packagereq>
+      <packagereq type="optional">alsa-firmware</packagereq>
+      <packagereq type="optional">bcm283x-firmware</packagereq>
+      <packagereq type="optional">cmospwd</packagereq>
+      <packagereq type="optional">firmware-addon-dell</packagereq>
+      <packagereq type="optional">gpsd</packagereq>
+      <packagereq type="optional">gpsd-clients</packagereq>
+      <packagereq type="optional">gypsy</packagereq>
+      <packagereq type="optional">hddtemp</packagereq>
+      <packagereq type="optional">hdparm</packagereq>
+      <packagereq type="optional">i8kutils</packagereq>
+      <packagereq type="optional">iscan-firmware</packagereq>
+      <packagereq type="optional">isight-firmware-tools</packagereq>
+      <packagereq type="optional">libifp</packagereq>
+      <packagereq type="optional">lsscsi</packagereq>
+      <packagereq type="optional">multican</packagereq>
+      <packagereq type="optional">openct</packagereq>
+      <packagereq type="optional">opensc</packagereq>
+      <packagereq type="optional">pcsc-lite</packagereq>
+      <packagereq type="optional">pcsc-lite-ccid</packagereq>
+      <packagereq type="optional">radeontop</packagereq>
+      <packagereq type="optional">wpan-tools</packagereq>
+    </packagelist>
+  </group>
+  <group>
+    <id>networkmanager-submodules</id>
+    <_name>Common NetworkManager Submodules</_name>
+    <_description>
+      This group contains NetworkManager submodules that are commonly used,
+      but may not be wanted in some streamlined configurations.
+    </_description>
+    <default>false</default>
+    <uservisible>false</uservisible>
+    <packagelist>
+      <packagereq type="default">NetworkManager-bluetooth</packagereq>
+      <packagereq type="default">NetworkManager-wifi</packagereq>
+      <packagereq type="default">NetworkManager-wwan</packagereq>
+    </packagelist>
+  </group>
+  <group>
+    <id>standard</id>
+    <_name>Standard</_name>
+    <_description>Common set of utilities that extend the minimal installation.</_description>
+    <default>false</default>
+    <uservisible>false</uservisible>
+    <packagelist>
+      <packagereq>abrt-cli</packagereq>
+      <packagereq>acl</packagereq>
+      <packagereq>at</packagereq>
+      <packagereq>attr</packagereq>
+      <packagereq>bash-completion</packagereq>
+      <packagereq>bc</packagereq>
+      <packagereq>bind-utils</packagereq>
+      <packagereq>bridge-utils</packagereq>
+      <packagereq>btrfs-progs</packagereq>
+      <packagereq>bzip2</packagereq>
+      <packagereq>cifs-utils</packagereq>
+      <packagereq>coolkey</packagereq>
+      <packagereq>cpio</packagereq>
+      <packagereq>crontabs</packagereq>
+      <packagereq>cryptsetup</packagereq>
+      <packagereq>cyrus-sasl-plain</packagereq>
+      <packagereq>dbus</packagereq>
+      <packagereq>deltarpm</packagereq>
+      <packagereq>dos2unix</packagereq>
+      <packagereq>dosfstools</packagereq>
+      <packagereq>ed</packagereq>
+      <packagereq>ethtool</packagereq>
+      <packagereq>fedora-release-notes</packagereq>
+      <packagereq>file</packagereq>
+      <packagereq>fpaste</packagereq>
+      <packagereq>fprintd-pam</packagereq>
+      <packagereq>gnupg2</packagereq>
+      <packagereq>hunspell</packagereq>
+      <packagereq>iptstate</packagereq>
+      <packagereq>irqbalance</packagereq>
+      <packagereq>jwhois</packagereq>
+      <packagereq>logrotate</packagereq>
+      <packagereq>lsof</packagereq>
+      <packagereq>mailcap</packagereq>
+      <packagereq>man-pages</packagereq>
+      <packagereq>mcelog</packagereq>
+      <packagereq>mdadm</packagereq>
+      <packagereq>microcode_ctl</packagereq>
+      <packagereq>mlocate</packagereq>
+      <packagereq>mtr</packagereq>
+      <packagereq>nano</packagereq>
+      <packagereq>net-tools</packagereq>
+      <packagereq>nfs-utils</packagereq>
+      <packagereq>nmap-ncat</packagereq>
+      <packagereq>ntfs-3g</packagereq>
+      <packagereq>ntfsprogs</packagereq>
+      <packagereq>pam_krb5</packagereq>
+      <packagereq>pam_pkcs11</packagereq>
+      <packagereq>passwdqc</packagereq>
+      <packagereq>pciutils</packagereq>
+      <packagereq>pinfo</packagereq>
+      <packagereq>plymouth</packagereq>
+      <packagereq>psacct</packagereq>
+      <packagereq>quota</packagereq>
+      <packagereq>realmd</packagereq>
+      <packagereq>rng-tools</packagereq>
+      <packagereq>rsync</packagereq>
+      <packagereq>rsyslog</packagereq>
+      <packagereq>setuptool</packagereq>
+      <packagereq>smartmontools</packagereq>
+      <packagereq>sos</packagereq>
+      <packagereq>sssd</packagereq>
+      <packagereq>sudo</packagereq>
+      <packagereq>symlinks</packagereq>
+      <packagereq>systemd-udev</packagereq>
+      <packagereq>tar</packagereq>
+      <packagereq>tcpdump</packagereq>
+      <packagereq>tcp_wrappers</packagereq>
+      <packagereq>telnet</packagereq>
+      <packagereq>time</packagereq>
+      <packagereq>traceroute</packagereq>
+      <packagereq>tree</packagereq>
+      <packagereq>unzip</packagereq>
+      <packagereq>usbutils</packagereq>
+      <packagereq>util-linux-user</packagereq>
+      <packagereq>vconfig</packagereq>
+      <packagereq>wget</packagereq>
+      <packagereq>which</packagereq>
+      <packagereq>wireless-tools</packagereq>
+      <packagereq>words</packagereq>
+      <packagereq>zip</packagereq>
+      <packagereq type="conditional" requires="control-center">chrony</packagereq>
+    </packagelist>
+  </group>
+  <environment>
+    <id>my-custom-environment</id>
+    <_name>My Custom Environment</_name>
+    <_description>Grouplist for custom environment</_description>
+    <display_order>1</display_order>
+    <grouplist>
+      <groupid>core</groupid>
+      <groupid>networkmanager-submodules</groupid>
+      <groupid>ansible-node</groupid>
+      <groupid>gateway-software</groupid>
+    </grouplist>
+    <optionlist>
+      <groupid>standard</groupid>
+      <groupid>guest-agents</groupid>
+    </optionlist>
+  </environment>
+  <environment>
+    <id>minimal-environment</id>
+    <_name>Minimal Install</_name>
+    <_description>Basic functionality.</_description>
+    <display_order>1</display_order>
+    <grouplist>
+      <groupid>core</groupid>
+    </grouplist>
+    <optionlist>
+      <groupid>standard</groupid>
+      <groupid>guest-agents</groupid>
+    </optionlist>
+  </environment>
+
+</comps>

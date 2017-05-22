@@ -1,0 +1,48 @@
+= Fedora Offline Kickstart Spin
+Robert Van Voorhees <rcvanvo@gmail.com>
+// Settings:
+:experimental:
+:idprefix:
+:idseparator: -
+ifndef::env-github[:icons: font]
+ifdef::env-github,env-browser[]
+:toc: macro
+:toclevels: 1
+endif::[]
+ifdef::env-github[]
+:status:
+:outfilesuffix: .adoc
+:!toc-title:
+:caution-caption: :fire:
+:important-caption: :exclamation:
+:note-caption: :paperclip:
+:tip-caption: :bulb:
+:warning-caption: :warning:
+endif::[]
+
+The purpose of this repository is to allow someone to rapidly and easily create their own ISO image (for use in a USB or DVD) to provide a fully offline unattended install of Fedora.
+
+=== Prerequisites
+
+These directions assume you are running a Fedora 25 system, either virtualized or not.
+
+[source, bash]
+----
+sudo su -c "dnf install -y mock && usermod -a -G mock $(whoami)"
+----
+
+This kickstart in this repository acts as only an example, and also assumes you have checked out `fedora-kickstarts` in a neighboring directory.
+
+[source, bash]
+----
+pushd ..
+git clone ssh://git@pagure.io/fedora-kickstarts.git
+popd
+----
+
+=== Pungi Automated (Recommended)
+
+[source, bash]
+----
+./build-iso.sh
+----
